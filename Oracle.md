@@ -101,7 +101,22 @@ SYSOPER 可以启动和关闭数据库，但是不能建立数据库，也不能
 
 - 初始化参数文件
 	- 文本参数信息 和 服务器参数信息
+
+## 逻辑存储结构
+
+- 表空间
+
+- 段
+
+- 盘区（系统以盘区为单位给段分配新的磁盘空间）
+
+- 数据块（Oracle 最小的存储单元，也是最基本的数据存储单位）
+
+***
+
+## 数据库实例的进程结构（了解）
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU2MzY3MjM2NSw4OTA1MTg1MjgsMjE3MT
+eyJoaXN0b3J5IjpbMTE1ODE3ODM3MSw4OTA1MTg1MjgsMjE3MT
 M2OTQwXX0=
 -->
