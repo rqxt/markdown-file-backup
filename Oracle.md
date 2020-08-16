@@ -84,7 +84,18 @@ SYSOPER 可以启动和关闭数据库，但是不能建立数据库，也不能
 - ABORT：在无法正常关闭数据库时才使用这种方式。立即中止，不回滚，需要恢复实例。
 
 
+# 第二章
 
+## 物理存储结构
+
+- 数据文件
+	- 存储各种数据，如表中的记录、索引数据、系统数据和临时数据等。
+
+- 日志文件
+
+- 控制文件
+
+- 初始化参数文件
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNzc3MzAxMSwyMTcxMzY5NDBdfQ==
+eyJoaXN0b3J5IjpbLTE1MTI3MTY4NSwyMTcxMzY5NDBdfQ==
 -->
