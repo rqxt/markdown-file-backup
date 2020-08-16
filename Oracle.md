@@ -132,8 +132,10 @@ SYSOPER 可以启动和关闭数据库，但是不能建立数据库，也不能
 ## 客户端和服务端配置
 
 记住文件名：
-
+- sqlnet.ora
+- tnsnames.ora
+- listener.ora
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMDk0NjE1OCw4OTA1MTg1MjgsMjE3MT
-M2OTQwXX0=
+eyJoaXN0b3J5IjpbNzQ5NDc1NDc1LDg5MDUxODUyOCwyMTcxMz
+Y5NDBdfQ==
 -->
