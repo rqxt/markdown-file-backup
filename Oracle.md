@@ -94,11 +94,14 @@ SYSOPER 可以启动和关闭数据库，但是不能建立数据库，也不能
 - 日志文件
 	- 记录了用户对数据库的修改信息（如增加、删除、修改），名字通常为 REDO*.LOG 格式。
 	- 对数据库执行查询操作不会产生日志。
-	- 归档日志模式，自动保存；非归档日志模式
+	- 归档日志模式，自动保存；非归档日志模式，序号自动覆盖。
 
 - 控制文件
+	- 数据库的名称、数据文件和联机日志文件的名称及位置、当前的日志序号、表空间等信息。
 
 - 初始化参数文件
+	- 文本参数信息 和 服务器参数信息
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODkwNTE4NTI4LDIxNzEzNjk0MF19
+eyJoaXN0b3J5IjpbMTU2MzY3MjM2NSw4OTA1MTg1MjgsMjE3MT
+M2OTQwXX0=
 -->
