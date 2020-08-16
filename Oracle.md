@@ -135,7 +135,90 @@ SYSOPER 可以启动和关闭数据库，但是不能建立数据库，也不能
 - sqlnet.ora
 - tnsnames.ora
 - listener.ora
+
+***
+
+# 第三章
+
+所谓的数据库用户即使用和共享数据库资源的人。
+
+**用户的概念：**
+
+访问 Oracle 数据库的“人”，如 DBA、开发工程师等。每个用户都有一个用户名、口令和相应的权限。
+
+**方案的概念：**
+
+方案（Schema）是一系列逻辑数据结构或对象的集合。
+
+方案和用户是 **一一对应** 的关系。
+
+***
+
+## 创建用户
+
+用 SQL 语句命令创建用户
+```sql
+CREATE USER user_name
+IDENTIFIED BY password
+```
+
+创建新用户 zhangsan，密码为 a12345。
+```sql
+CREATE USER zhangsan IDENTIFIED BY a12345;
+```
+
+创建新用户 lisi，密码为 a12345，表空间为 users，并且在 users 表空间可以使用 10mb 的磁盘表空间。
+```sql
+CREATE USER lisi IDENTIFIED BY a12345
+DEFAULT TABLESPACE users QUOTA 10M ON users;
+```
+
+创建新用户 tom，密码为 a12345，并且设置密码已过期，用户的状态为加锁。
+```sql
+CREATE USER tom IDENTIFIED BY a12345
+PASSWORD expire ACCOUNT lock;
+```
+
+## 权限和角色
+
+权限是用户对一项功能的执行权利。
+
+例如 获得数据库建立会话的系统权限（CREATE SESSOIN 权限）或者是连接数据库的角色（CONNECT）。
+
+- 系统权限
+- 对象权限
+
+## 系统权限的授权
+
+```sql
+GRANT system_privilege [, system_privilege] TO user_name [, user_name]
+[WITH ADMIN OPTION]
+```
+
+`GRANT 权限名 TO 用户名`
+
+授权实例：
+```sql
+CREATE USER lisi IDENTIFIED BY a12345;
+// 为新用户 zhangsan 授予 CREATE SESSION 系统权限及管理该系统权限的权利
+GRANT CREATE SESSION TO zhangsan WITH ADMIN OPTION;
+// 以新用户 zhangsan 连接数据库，并继续 lisi 授予 CREATE SESSION 权限
+CONNECT zhagnsan /a12345;
+GRANT CREATE SESSION TO lisi;
+-- 由于 zhangsan 具有对该权限的管理权利，所以授权成功
+-- 以 lisi 连接数据库
+CONNECT list/a12345;
+```
+
+## 系统权限的回收
+
+`REVOKE 系统权限 [, 系统权限] FROM 用户名 [, 用户名]`
+
+```sql
+CONNECT system/a12345;
+REVOKE CREATE SESSION FROM zhangsan, lisi;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQ5NDc1NDc1LDg5MDUxODUyOCwyMTcxMz
-Y5NDBdfQ==
+eyJoaXN0b3J5IjpbMTE3NzE2ODQzNyw3NDk0NzU0NzUsODkwNT
+E4NTI4LDIxNzEzNjk0MF19
 -->
