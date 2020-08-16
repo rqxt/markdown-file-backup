@@ -1,3 +1,5 @@
+# 第一章
+
 ## 三个阶段
 
 数据管理的三个阶段：
@@ -80,6 +82,9 @@ SYSOPER 可以启动和关闭数据库，但是不能建立数据库，也不能
 - IMMEDIATE：使用频率最高的关闭数据库的方式。使用该命令，正在处理的 SQL 语句立即中断，系统任何没有提交的数据全部回滚。
 - TRANSACTIONAL：计划关闭数据库
 - ABORT：在无法正常关闭数据库时才使用这种方式。立即中止，不回滚，需要恢复实例。
+
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE3MTM2OTQwXX0=
+eyJoaXN0b3J5IjpbLTExNzc3MzAxMSwyMTcxMzY5NDBdfQ==
 -->
