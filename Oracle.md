@@ -116,7 +116,17 @@ SYSOPER 可以启动和关闭数据库，但是不能建立数据库，也不能
 
 ## 数据库实例的进程结构（了解）
 
+- 用户进程
+- 服务进程
+- 后台进程
+	- 数据写进程
+	- 日志写进程
+	- ...
+
+## 内存结构（了解）
+
+系统全局区、程序qrj
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE1ODE3ODM3MSw4OTA1MTg1MjgsMjE3MT
-M2OTQwXX0=
+eyJoaXN0b3J5IjpbOTI1MDc3OTQyLDg5MDUxODUyOCwyMTcxMz
+Y5NDBdfQ==
 -->
