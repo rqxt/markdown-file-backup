@@ -125,8 +125,15 @@ SYSOPER 可以启动和关闭数据库，但是不能建立数据库，也不能
 
 ## 内存结构（了解）
 
-系统全局区、程序qrj
+系统全局区、程序全局区
+
+***
+
+## 客户端和服务端配置
+
+记住文件名：
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTI1MDc3OTQyLDg5MDUxODUyOCwyMTcxMz
-Y5NDBdfQ==
+eyJoaXN0b3J5IjpbLTEzMDk0NjE1OCw4OTA1MTg1MjgsMjE3MT
+M2OTQwXX0=
 -->
