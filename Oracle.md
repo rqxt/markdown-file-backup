@@ -293,6 +293,40 @@ ALTER USRE 用户名 ACCOUNT UNLOCK;
 ```sql
 DROP USER 用户名;
 ```
+
+
+# 第四章
+
+数据库表及其管理
+
+## 基本数据类型
+
+字符数据类型：
+- CHAR(n)：存储长度为 n 的定长字符串。
+- VARCHAR2(n)：存储长度为 n 的变长字符串。
+- NCHAR(n)：定长为 n 的 Unicode 字符集。
+- NVARCHAR2(n)：存储长度为 n 的变长的 Unicode 字符集数据。
+- LONG：过时了，一般不用。
+
+数值数据类型：
+- 可以使用 INT、INTEGER、SMALLINT、FLOAT、REAL 等。
+- NUMBER（q，s）：p 是精度，s 是小数点位数。
+- NUMBER（p）：精度是 p 整数。
+- NUMBER：默认是精度是 38 的浮点数
+
+日期数据类型：
+- DATE：用户存储日期和时间格式的数据。
+- TIMESTAMP：时间戳类型。
+- TIMESTAMP WITH TIME ZONE 和前面的一样，不过提供了 时区 支持。
+
+LOB 数据类型：
+- BLOG：二进制大对象；
+- CLOB：包含单字节或多字节字符的字符大对象；
+- BFILE：包含存储在数据库外部的大型二进制文件的定位器；
+
+其他数据类型：
+- ROWID 伪列。ROWID 数据类型是 ORACLE 数据表中的一个伪列，它是数据库中每行数据内在的唯一标识。ROWID 值唯一标识数据库中的一行。
+- ...
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY1NDIxNDMyOV19
+eyJoaXN0b3J5IjpbMTA5NjAwOTgzOSwtNjU0MjE0MzI5XX0=
 -->
