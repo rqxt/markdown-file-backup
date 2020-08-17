@@ -218,7 +218,81 @@ CONNECT list/a12345;
 CONNECT system/a12345;
 REVOKE CREATE SESSION FROM zhangsan, lisi;
 ```
+
+
+## 对象权限的授权
+
+```sql
+GRANT 对象权限 ON 对象名称 TO 用户名称
+```
+
+例如：
+```sql
+CONNECT system/a12345;
+GRANT SELECT, UPDATE ON scott.emp TO zhangsan, lisi;
+
+-- 或者
+CONNECT scott/tiger;
+GRANT SELECT, UPDATE ON emp TO zhangsan WITH GRANT OPTION;
+CONNECT zhangsan/a12345;
+GRANT SELECT, UPDATE ON scott.emp TO lisi;
+```
+
+## 对象权限的回收
+
+```sql
+REVOKE 对象权限 ON 对象名称 FROM 用户名称;
+```
+
+
+## 角色管理
+
+角色通常授予一类具有相同权限的用户。
+
+**系统预定义角色：**
+- DBA 数据库管理员角色
+- RESOURCE 数据库资源角色
+- CONNECT 数据库连接角色
+
+**用户自定义角色：**
+- 创建角色
+	```sql
+	CREATE ROLE 角色名称
+	```
+- 为角色授予权限和回收权限
+	```sql
+	GRANT 系统权限 TO 角色名称;
+	-- 对象权限的授予同上。
+	```
+- 将角色授予用户
+	```sql
+	GRANT 角色名 TO 用户名;
+	```
+- 删除角色
+	```sql
+	DROP ROLE 角色名称;
+	```
+
+
+## 管理用户
+
+**修改用户：**
+```sql
+ALTER USER zhangsan INDENTIFIED BY ora
+DEFAULT TABLESPACE users
+QUOTA UNLIMITED ON users;
+```
+
+**启用和禁用账户：**
+```sql
+ALTER USER 用户名 ACCOUNT LOCK;
+ALTER USRE 用户名 ACCOUNT UNLOCK;
+```
+
+**删除用户：**
+```sql
+DROP USER 用户名;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE3NzE2ODQzNyw3NDk0NzU0NzUsODkwNT
-E4NTI4LDIxNzEzNjk0MF19
+eyJoaXN0b3J5IjpbLTY1NDIxNDMyOV19
 -->
